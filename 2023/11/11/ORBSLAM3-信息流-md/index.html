@@ -8,15 +8,30 @@
   <link rel="dns-prefetch" href="https://kaoxirui.github.io">
   <title>ORBSLAM3--信息流.md | KAOKAO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="定义一个SLAM系统 入口：system，在其构造函数中分别初始化tracking,localmapping,loopclosing,viewer对象并启动对应线程  tracking 定义Slam对象 调用trackmonocular函数 mpTracker→GrabImageMonocular函数，其中提取orb特征点，跟踪后返回位姿 Track();完成跟踪 PreintegrateIMU(">
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+    <style>
+    .pace .pace-progress {
+        background: #6d6d6d; /*进度条颜色*/
+        height: 2px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #6d6d6d; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #6d6d6d;    /*上边框颜色*/
+        border-left-color: #6d6d6d;    /*左边框颜色*/
+    }
+  </style>
+  <meta name="description" content="定义一个SLAM系统 入口：system，在其构造函数中分别初始化tracking,localmapping,loopclosing,viewer对象并启动对应线程  tracking 定义Slam对象  调用trackmonocular函数 mpTracker→GrabImageMonocular函数，其中提取orb特征点，跟踪后返回位姿 Track();完成跟踪 PreintegrateIMU">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ORBSLAM3--信息流.md">
 <meta property="og:url" content="https://kaoxirui.github.io/2023/11/11/ORBSLAM3-%E4%BF%A1%E6%81%AF%E6%B5%81-md/index.html">
 <meta property="og:site_name" content="KAOKAO">
-<meta property="og:description" content="定义一个SLAM系统 入口：system，在其构造函数中分别初始化tracking,localmapping,loopclosing,viewer对象并启动对应线程  tracking 定义Slam对象 调用trackmonocular函数 mpTracker→GrabImageMonocular函数，其中提取orb特征点，跟踪后返回位姿 Track();完成跟踪 PreintegrateIMU(">
+<meta property="og:description" content="定义一个SLAM系统 入口：system，在其构造函数中分别初始化tracking,localmapping,loopclosing,viewer对象并启动对应线程  tracking 定义Slam对象  调用trackmonocular函数 mpTracker→GrabImageMonocular函数，其中提取orb特征点，跟踪后返回位姿 Track();完成跟踪 PreintegrateIMU">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-11T13:58:40.000Z">
-<meta property="article:modified_time" content="2023-11-11T14:02:22.048Z">
+<meta property="article:modified_time" content="2023-11-11T15:21:58.098Z">
 <meta property="article:author" content="Kao">
 <meta property="article:tag" content="SLAM">
 <meta property="article:tag" content="ORBSLAM3">
@@ -61,7 +76,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -129,7 +144,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -168,7 +183,8 @@
 <li>入口：system，在其构造函数中分别初始化tracking,localmapping,loopclosing,viewer对象并启动对应线程</li>
 </ul>
 <h2 id="tracking"><a href="#tracking" class="headerlink" title="tracking"></a>tracking</h2><ol>
-<li>定义Slam对象<ol>
+<li><p>定义Slam对象</p>
+<ol>
 <li>调用trackmonocular函数</li>
 <li>mpTracker→GrabImageMonocular函数，其中提取orb特征点，跟踪后返回位姿<ol>
 <li>Track();完成跟踪<ol>
@@ -186,7 +202,7 @@
 </ol>
 </li>
 </ol>
-</li>
+<span id="more"></span></li>
 </ol>
 <h3 id="local-mapping"><a href="#local-mapping" class="headerlink" title="local mapping"></a>local mapping</h3><ul>
 <li>local mapping启动run函数<ul>
@@ -425,15 +441,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ORBSLAM3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
             
             <div class="clearfix"></div>
