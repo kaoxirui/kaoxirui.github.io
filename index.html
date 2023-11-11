@@ -140,6 +140,129 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ORBSLAM3-信息流-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/11/11/ORBSLAM3-%E4%BF%A1%E6%81%AF%E6%B5%81-md/">ORBSLAM3--信息流.md</a>
+    </h1>
+  
+
+        
+        <a href="/2023/11/11/ORBSLAM3-%E4%BF%A1%E6%81%AF%E6%B5%81-md/" class="archive-article-date">
+  	<time datetime="2023-11-11T13:58:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="定义一个SLAM系统"><a href="#定义一个SLAM系统" class="headerlink" title="定义一个SLAM系统"></a>定义一个SLAM系统</h1><ul>
+<li>入口：system，在其构造函数中分别初始化tracking,localmapping,loopclosing,viewer对象并启动对应线程</li>
+</ul>
+<h2 id="tracking"><a href="#tracking" class="headerlink" title="tracking"></a>tracking</h2><ol>
+<li>定义Slam对象<ol>
+<li>调用trackmonocular函数</li>
+<li>mpTracker→GrabImageMonocular函数，其中提取orb特征点，跟踪后返回位姿<ol>
+<li>Track();完成跟踪<ol>
+<li>PreintegrateIMU();&#x2F;&#x2F;完成IMU预计分</li>
+<li>MonocularInitialization();&#x2F;&#x2F;完成单目视觉初始化</li>
+<li>TrackReferenceKeyFrame();&#x2F;&#x2F;跟踪参考关键帧，使用帧间相对约束</li>
+<li>TrackWithMotionModel();&#x2F;&#x2F;使用运动模型跟踪，使用帧间相对约束</li>
+<li>PredictStateIMU();&#x2F;&#x2F;IMU递推</li>
+<li>Relocalization();&#x2F;&#x2F;重定位函数</li>
+<li>TrackLocalMap();&#x2F;&#x2F;加入地图约束和惯性约束后，完成跟踪</li>
+<li>NeedNewKeyFrame();&#x2F;&#x2F;关键帧的决策</li>
+<li>CreateNewKeyFrame();&#x2F;&#x2F;关键帧的约束</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="local-mapping"><a href="#local-mapping" class="headerlink" title="local mapping"></a>local mapping</h3><ul>
+<li>local mapping启动run函数<ul>
+<li>ProcessNewKeyFrame();&#x2F;&#x2F;处理列表中的关键帧</li>
+<li>MapPointCulling();&#x2F;&#x2F;剔除冗余点</li>
+<li>CreateNewMapPoints();&#x2F;&#x2F;三角化并产生新的地图点</li>
+<li>Optimizer::LocalInertialBA;&#x2F;&#x2F;局部带惯性的BA</li>
+<li>Optimizer::LocalBundleAdjustment;&#x2F;&#x2F;局部视觉BA</li>
+<li>InitializeIMU();&#x2F;&#x2F;imu初始化</li>
+<li>KeyFrameCulling();&#x2F;&#x2F;局部关键帧的剔除</li>
+<li>ScaleRefinement();&#x2F;&#x2F;重新定义尺度</li>
+<li>mpLoopCloser-&gt;InsertKeyFrame(mpCurrentKeyFrame);&#x2F;&#x2F;插入关键帧</li>
+</ul>
+</li>
+</ul>
+<h3 id="loopclosing"><a href="#loopclosing" class="headerlink" title="loopclosing"></a>loopclosing</h3><ul>
+<li>启动run函数<ul>
+<li>NewDetectCommonRegions();&#x2F;&#x2F;完成回环检测（场景重识别），主要完成候选区域检测和计算sim3</li>
+<li>MergeLocal();&#x2F;&#x2F;地图融合</li>
+<li>CorrectLoop();&#x2F;&#x2F;开启回环矫正</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SLAM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ORBSLAM3</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/11/11/ORBSLAM3-%E4%BF%A1%E6%81%AF%E6%B5%81-md/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-leetcode学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -570,6 +693,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SLAM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ORBSLAM3</a>
               </li>
             
             <div class="clearfix"></div>
