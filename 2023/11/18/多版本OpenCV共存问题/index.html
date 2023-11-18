@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://kaoxirui.github.io">
-  <title>Tag: ORBSLAM3 | KAOKAO</title>
+  <title>多版本OpenCV共存问题 | KAOKAO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
   <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
@@ -23,12 +23,18 @@
         border-left-color: #6d6d6d;    /*左边框颜色*/
     }
   </style>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="KAOKAO">
-<meta property="og:url" content="https://kaoxirui.github.io/tags/ORBSLAM3/index.html">
+  <meta name="description" content="多版本OpenCV共存问题在学习ORBSLAM3的过程中，由于电脑使用OpenCV4.5及OpenCV3.4,出现核心以转储问题，网上建议使用 3.2版本（最后使用4.2） opencv              下载地址：https:&#x2F;&#x2F;opencv.org&#x2F;releases&#x2F; opencv_contrib下载地址：https:&#x2F;&#x2F;github.com&#x2F;opencv&#x2F;opencv_contrib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多版本OpenCV共存问题">
+<meta property="og:url" content="https://kaoxirui.github.io/2023/11/18/%E5%A4%9A%E7%89%88%E6%9C%ACOpenCV%E5%85%B1%E5%AD%98%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="KAOKAO">
+<meta property="og:description" content="多版本OpenCV共存问题在学习ORBSLAM3的过程中，由于电脑使用OpenCV4.5及OpenCV3.4,出现核心以转储问题，网上建议使用 3.2版本（最后使用4.2） opencv              下载地址：https:&#x2F;&#x2F;opencv.org&#x2F;releases&#x2F; opencv_contrib下载地址：https:&#x2F;&#x2F;github.com&#x2F;opencv&#x2F;opencv_contrib">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-18T10:56:25.000Z">
+<meta property="article:modified_time" content="2023-11-18T10:56:59.693Z">
 <meta property="article:author" content="Kao">
+<meta property="article:tag" content="SLAM">
+<meta property="article:tag" content="OpenCV">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="KAOKAO" type="application/atom+xml">
@@ -153,39 +159,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-多版本OpenCV共存问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/11/ORBSLAM3-%E4%BF%A1%E6%81%AF%E6%B5%81-md/" class="archive-article-date">
-  	<time datetime="2023-11-11T13:58:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/11/ORBSLAM3-%E4%BF%A1%E6%81%AF%E6%B5%81-md/">ORBSLAM3--信息流.md</a>
+    <h1 class="article-title" itemprop="name">
+      多版本OpenCV共存问题
     </h1>
   
 
-	 <!--显示阅读次数-->
-   	 
-                 <!--显示阅读次数完毕-->
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2023/11/18/%E5%A4%9A%E7%89%88%E6%9C%ACOpenCV%E5%85%B1%E5%AD%98%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2023-11-18T10:56:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="多版本OpenCV共存问题"><a href="#多版本OpenCV共存问题" class="headerlink" title="多版本OpenCV共存问题"></a>多版本OpenCV共存问题</h1><p>在学习ORBSLAM3的过程中，由于电脑使用OpenCV4.5及OpenCV3.4,出现核心以转储问题，网上建议使用 3.2版本（最后使用4.2）</p>
+<p>opencv              下载地址：<a target="_blank" rel="noopener" href="https://opencv.org/releases/">https://opencv.org/releases/</a></p>
+<p>opencv_contrib下载地址：<a target="_blank" rel="noopener" href="https://github.com/opencv/opencv_contrib/tags?after=3.4.11">https://github.com/opencv/opencv_contrib/tags?after=3.4.11</a></p>
+<p>将二者解压,opencv_contrib文件放在opencv文件夹下</p>
+<span id="more"></span>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd OpenCV_3<span class="number">.2</span></span><br><span class="line">mkdir build &amp;&amp; cd build</span><br><span class="line">cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/home/kao/<span class="number">3</span>rdparty/opencv<span class="number">-3.2</span><span class="number">.0</span>/build -D OPENCV_EXTRA_MODULES_PATH=/home/kao/<span class="number">3</span>rdparty/opencv<span class="number">-3.2</span><span class="number">.0</span>/opencv_contrib<span class="number">-3.2</span><span class="number">.0</span>/modules -D ENABLE_PRECOMPILED_HEADERS=OFF -DENABLE_CXX11=ON ..</span><br><span class="line">make -j8</span><br><span class="line"><span class="comment">//sudo make install</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>后来使用的简单方法：</li>
+</ul>
+<p>直接创建build文件夹，cmake..，make -j8</p>
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/usr/include/c++/<span class="number">9</span>/cstdlib:<span class="number">75</span>:<span class="number">15</span>: fatal error: stdlib.h: 没有那个文件或目录</span><br><span class="line">   <span class="number">75</span> | #include_next &lt;stdlib.h&gt;</span><br><span class="line">解决方法：cmake时加上参数-D ENABLE_PRECOMPILED_HEADERS=OFF</span><br><span class="line">error: ‘CODEC_FLAG_GLOBAL_HEADER’ was <span class="keyword">not</span> declared in <span class="keyword">this</span> scope; did you mean ‘AV_CODEC_FLAG_GLOBAL_HEADER’?</span><br><span class="line">解决方法：在opencv/opencv<span class="number">-3.2</span><span class="number">.0</span>/modules/videoio/src/cap_ffmpeg_impl.hpp 文件里添加：</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> AV_CODEC_FLAG_GLOBAL_HEADER (1 &lt;&lt; 22)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CODEC_FLAG_GLOBAL_HEADER AV_CODEC_FLAG_GLOBAL_HEADER</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> AVFMT_RAWPICTURE 0x0020</span></span><br><span class="line">make[<span class="number">2</span>]: *** [modules/python3/CMakeFiles/opencv_python3.dir/build.make:<span class="number">56</span>: </span><br><span class="line">modules/python3/CMakeFiles/opencv_python3.dir/__/src2/cv2.cpp.o] Error <span class="number">1</span></span><br><span class="line">make[<span class="number">1</span>]: *** [CMakeFiles/Makefile2:<span class="number">21149</span>: modules/python3/CMakeFiles</span><br><span class="line">/opencv_python3.dir/all] Error <span class="number">2</span></span><br><span class="line">/home/kao/<span class="number">3</span>rdparty/opencv<span class="number">-3.2</span><span class="number">.0</span>/modules/python/src2</span><br><span class="line">解决方法：找到cv2.cpp,大约在<span class="number">730</span>行，将</span><br><span class="line"><span class="type">char</span>* str = <span class="built_in">PyString_AsString</span>(obj);</span><br><span class="line">改为</span><br><span class="line"><span class="type">char</span>* str = (<span class="type">char</span> *)<span class="built_in">PyString_AsString</span>(obj);</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/whyaxxttxs/article/details/131583187">https://blog.csdn.net/whyaxxttxs/article/details/131583187</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,25 +211,112 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ORBSLAM3</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">OpenCV</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://kaoxirui.github.io/2023/11/18/%E5%A4%9A%E7%89%88%E6%9C%ACOpenCV%E5%85%B1%E5%AD%98%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2023/11/18/ORBSLAM3%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ORBSLAM3报错问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -236,9 +339,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
