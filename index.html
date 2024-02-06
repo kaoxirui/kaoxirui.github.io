@@ -155,6 +155,297 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用gdb调试ROS程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/02/06/%E4%BD%BF%E7%94%A8gdb%E8%B0%83%E8%AF%95ROS%E7%A8%8B%E5%BA%8F/">使用gdb调试ROS程序</a>
+    </h1>
+  
+
+        
+        <a href="/2024/02/06/%E4%BD%BF%E7%94%A8gdb%E8%B0%83%E8%AF%95ROS%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
+  	<time datetime="2024-02-06T07:53:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>在学习minimum snap时遇到无法生成轨迹的问题，以为是文件中给出的显示程序有问题，但在网上搜不到任何相关问题，于是想到使用gdb进行调试。（xterm的每行显示列数没查到怎么设置，矩阵较大时自动换行显示很难受，其他终端在调试多node时也存在问题，还没有解决方案）</li>
+</ul>
+<h2 id="在debug模式编译"><a href="#在debug模式编译" class="headerlink" title="在debug模式编译"></a>在debug模式编译</h2><p>编译器有些优化会让debug无法进行。为了避免这种情况，程序编译时要加上debug选项，让cmake以debug模式编译，不然可能会在gdb调试的时候不能跳转到源代码，只能进入断点。</p>
+<p>普通的非ROS程序用gdb怎么调试呢？在编译好后(编译的方法和正常的程序一样，不过要在cmakelists前面添加)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(CMAKE_BUILD_TYPE Debug)</span><br></pre></td></tr></table></figure>
+
+
+<p>如果用命令行catkin_make，在输入catkin_make时加上一个参数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_make -DCMAKE_BUILD_TYPE=Debug</span><br></pre></td></tr></table></figure>
+
+<p>或者直接修改CMakelist.txt，添加以下代码,</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">SET</span>(CMAKE_BUILD_TYPE <span class="string">&quot;Debug&quot;</span>)</span><br><span class="line"><span class="built_in">SET</span>(CMAKE_CXX_FLAGS_DEBUG <span class="string">&quot;$ENV&#123;CXXFLAGS&#125; -O0 -Wall -g -ggdb&quot;</span>)</span><br><span class="line"><span class="built_in">SET</span>(CMAKE_CXX_FLAGS_RELEASE <span class="string">&quot;$ENV&#123;CXXFLAGS&#125; -O3 -Wall&quot;</span>)</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2024/02/06/%E4%BD%BF%E7%94%A8gdb%E8%B0%83%E8%AF%95ROS%E7%A8%8B%E5%BA%8F/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ROS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">gdb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/06/%E4%BD%BF%E7%94%A8gdb%E8%B0%83%E8%AF%95ROS%E7%A8%8B%E5%BA%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Closed-formed-solution-to-Minimum-snap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/02/06/Closed-formed-solution-to-Minimum-snap/">Closed-formed solution to Minimum snap</a>
+    </h1>
+  
+
+        
+        <a href="/2024/02/06/Closed-formed-solution-to-Minimum-snap/" class="archive-article-date">
+  	<time datetime="2024-02-06T07:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Closed-formed-solution-to-Minimum-snap"><a href="#Closed-formed-solution-to-Minimum-snap" class="headerlink" title="**Closed-formed **solution to Minimum snap"></a>**Closed-formed **solution <strong>to</strong> Minimum <strong>snap</strong></h1><p>之前优化的都是分段多项式每一段的系数，这里存在一些问题，求解p都是没有物理意义的值，可能会带来轨迹优化数值上的不稳定性，所以通过M映射矩阵，把p转化为d(轨迹路径点的v，a)这样数值稳定性会好很多</p>
+<p><img src="/2024/02/06/Closed-formed-solution-to-Minimum-snap/image-20240206153410214.png" alt="image-20240206153410214"></p>
+<p>以minimum snap为例，写出多项式的向量形式：</p>
+<p>​	<img src="/2024/02/06/Closed-formed-solution-to-Minimum-snap/wps25.png" alt="img"></p>
+        
+          <a class="article-more-a" href="/2024/02/06/Closed-formed-solution-to-Minimum-snap/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ROS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">closed_formed_solution</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">motion_planning</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">minimum snap</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CPP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/06/Closed-formed-solution-to-Minimum-snap/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-motion-planning-Minimum-snap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/02/06/motion-planning-Minimum-snap/">motion planning &amp; Minimum snap</a>
+    </h1>
+  
+
+        
+        <a href="/2024/02/06/motion-planning-Minimum-snap/" class="archive-article-date">
+  	<time datetime="2024-02-06T07:13:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Minimum-snap-Trajectory-Generation"><a href="#Minimum-snap-Trajectory-Generation" class="headerlink" title="Minimum snap Trajectory Generation"></a><strong>Minimum snap Trajectory Generation</strong></h1><h2 id="1-公式化"><a href="#1-公式化" class="headerlink" title="1.公式化"></a>1.公式化</h2><p><img src="/2024/02/06/motion-planning-Minimum-snap/image-20240206151722965.png" alt="image-20240206151722965"></p>
+<ul>
+<li>每一段都是多项式轨迹</li>
+<li>没必要固定阶数，但保持相同的阶数可以使问题简单</li>
+<li>每段的时间间隔是已知的</li>
+</ul>
+<h2 id="2-约束条件"><a href="#2-约束条件" class="headerlink" title="2. 约束条件"></a>2. 约束条件</h2><ul>
+<li><p>derivative constraint（导数约束）：<img src="/2024/02/06/motion-planning-Minimum-snap/wps1.png" alt="img">在七点和重点满足边界条件</p>
+</li>
+<li><p>Continuity constraint（连续性约束）：<img src="/2024/02/06/motion-planning-Minimum-snap/wps2.png" alt="img">保证轨迹之间的连续性</p>
+</li>
+</ul>
+<p><img src="/2024/02/06/motion-planning-Minimum-snap/image-20240206152051954.png" alt="image-20240206152051954"></p>
+        
+          <a class="article-more-a" href="/2024/02/06/motion-planning-Minimum-snap/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ROS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">minimum snap</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">motion planning</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">gdb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/06/motion-planning-Minimum-snap/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-给图片批量添加水印" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1041,6 +1332,34 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">closed_formed_solution</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">motion_planning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">minimum snap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CPP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">motion planning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Cpp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">gdb</a>
               </li>
             
             <div class="clearfix"></div>
